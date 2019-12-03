@@ -1,0 +1,16 @@
+<?php
+include 'connectdb.php';
+?>
+<?php
+include 'getPatient.php';
+?>
+<?php
+$doctor = $_POST['doctor'];
+$choice = $_['choice'];
+if($choice == "no"){
+        header(location:.getenv("HTTP_REFERER"));
+}
+else if($choice == "yes"){
+        $delete_query = 'DELETE FROM doctor WHERE licenseNum = "'.$doctor.'"';
+}
+?>
