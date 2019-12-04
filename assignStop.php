@@ -1,3 +1,6 @@
+<html>
+<link rel="stylesheet" type="text/css" href="hospital.css">
+</html>
 <?php
 include 'connectdb.php';
 ?>
@@ -12,7 +15,7 @@ $choice = $_POST['choice'];
 if($chocie == "Assign"){
 	$query = 'INSERT INTO treat(patientOHIP,doctorNum) VALUES ("'.$patientOHIP.'","'.$doctorNum.'")';
 	$result = mysqli_query($connection,$query);
-	if(mysqli_num_rows($result)==0){
+	if(mysqli_affected_rows($result)==0){
 		die("Fail!Please check your choice");
 		mysqli_free_reslut($result);
 	}

@@ -1,3 +1,6 @@
+<html>
+<link rel="stylesheet" type="text/css" href="hospital.css">
+</html>
 <?php
 include 'connectdb.php';
 ?>

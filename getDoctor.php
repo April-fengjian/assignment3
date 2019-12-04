@@ -1,6 +1,9 @@
 <?php
 include 'connectdb.php';
 ?>
+<html>
+<link rel="stylesheet" type="text/css" href="hospital.css"/>
+</html>
 <form action = "doctorInfo.php" method = "post">
 <?php
 //the file is used to get all the doctor from the database

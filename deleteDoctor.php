@@ -1,3 +1,6 @@
+<html>
+<link rel="stylesheet" type="text/css" href="hospital.css">
+</html>
 <?php
 include 'connectdb.php';
 ?>
@@ -7,25 +10,18 @@ include 'connectdb.php';
 $doctor = $_POST['doctor'];
 $choice = $_POST['choice'];
 
-//check if the doctor is exist in the list
-$query = 'SELECT * FROM treat,patient WHERE treat.patientOHIP = patient.OHIP AND treat.doctorNum = "'.$doctor.'"';
-$result = mysqli_query($connection,$query);
-if(!$result){
-	echo "ERROR";
-}
-
 //check the client's choice
 //if no, do not delete the doctor
 if($choice == "no"){
         echo "Cancled! The deletion is fail";
 }
-else if($choice == "yes"){
+else{
         $delete_query = 'DELETE FROM doctor WHERE licenseNum = "'.$doctor.'"';
-	$delete_result = mysqli_query($connection,$delete_query);
-	if($delete_result){
+//	$delete_result = mysqli_query($connection,$delete_query);
+	if(mysqli_query($connection,$delete_query)){
 		echo "Success!";
 	}else{
-		echo"Fail! The doctor may not exit in the list";
+		die("Fail! The doctor may not exit in the list");
 	}
 }
 mysqli_close($connection);

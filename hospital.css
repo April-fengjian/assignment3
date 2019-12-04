@@ -1,5 +1,5 @@
 /*
-	Museum Styles
+	Hospital Styles
 */
 
 body {
@@ -15,9 +15,4 @@ select {
 		font-family: 'Charmonman', cursive;
 		background-color: yellow;
 }
-table, th, td {
-	vertical-align: top;
-}
-img {
-	vertical-align: top;	
-}
+
